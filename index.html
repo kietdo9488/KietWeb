@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,56 @@
     <title>Document</title>
     <link rel="stylesheet" href="./public/css/style.css">
 </head>
+
 <body>
-<div class="head">
-    <div class="head-title">
-        <h1>Kiệt Profile</h1>
-        <h3>Telephone: 0378067496</h3>
-        <h3>Mail: kietdo9488@mail.com</h3>
+    <div class="head">
+        <div class="head-title">
+            Wifi
+        </div>
     </div>
-</div>
-<div class="mid">
-    <a target="_blank" style="text-decoration: none;" href="https://www.facebook.com/kiet.do.3990/">
-        <div class="item margin">
-            Facebook
-        </div>
-    
-    <a target="_blank" style="text-decoration: none;" href="https://m.me/kiet.do.3990">
-        <div class="item margin">
-            Messenger
-        </div>
-    </a>
-    <a target="_blank" style="text-decoration: none;" href="http://zaloapp.com/qr/p/4yr90ufdeqld">
-        <div class="item margin">
-            Zalo
-        </div>
-    </a>
-</div>
-<div class="bg"></div>
-<div class="bot">
-    &copy; Copyright by Đỗ Kiệt
-</div>
+    <div class="card_body">
+        <div class="card_title">Brodard 2.4G</div>
+        <span class="wifi_name_label">SSID: </span>
+        <span class="wifi_name_text">Brodard 2.4G</span>
+        <br>
+        <span class="wifi_password_label">Password: </span>
+        <span class="wifi_password_text" id="myText1">thanhphuong1478</span>
+        <button class="button-4" onclick="copyContent1()">Sao chép mật khẩu</button>
+    </div>
+    <div class="card_body">
+        <div class="card_title">Brodard 5G</div>
+        <span class="wifi_name_label">SSID: </span>
+        <span class="wifi_name_text">Brodard 5G</span>
+        <br>
+        <span class="wifi_password_label">Password: </span>
+        <span class="wifi_password_text" id="myText2">12345678@9</span>
+        <button class="button-4" onclick="copyContent2()">Sao chép mật khẩu</button>
+    </div>
+
+    <script>
+        let text1 = document.getElementById('myText1').innerHTML;
+        let text2 = document.getElementById('myText2').innerHTML;
+
+        const copyContent1 = async () => {
+            try {
+                await navigator.clipboard.writeText(text1);
+                console.log('Content copied to clipboard');
+                alert("Đã sao chép vào bộ đệm");
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+        const copyContent2 = async () => {
+            try {
+                await navigator.clipboard.writeText(text2);
+                console.log('Content copied to clipboard');
+                alert("Đã sao chép vào bộ đệm");
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+    </script>
 </body>
+
+
 </html>
