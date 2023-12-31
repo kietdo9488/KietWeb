@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+    <div class="head">
+        <div class="head-title">
+            Wifi
+        </div>
+    </div>
+    <div class="card_body">
+        <div class="card_title">Brodard 2.4G</div>
+        <span class="wifi_name_label">SSID: </span>
+        <span class="wifi_name_text">Brodard 2.4G</span>
+        <br>
+        <span class="wifi_password_label">Password: </span>
+        <span class="wifi_password_text" id="myText1">thanhphuong1478</span>
+        <button class="button-4" onclick="copyContent1()">Sao chép mật khẩu</button>
+    </div>
+    <div class="card_body">
+        <div class="card_title">Brodard 5G</div>
+        <span class="wifi_name_label">SSID: </span>
+        <span class="wifi_name_text">Brodard 5G</span>
+        <br>
+        <span class="wifi_password_label">Password: </span>
+        <span class="wifi_password_text" id="myText2">12345678@9</span>
+        <button class="button-4" onclick="copyContent2()">Sao chép mật khẩu</button>
+    </div>
+
+    <script>
+        let text1 = document.getElementById('myText1').innerHTML;
+        let text2 = document.getElementById('myText2').innerHTML;
+
+        const copyContent1 = async () => {
+            try {
+                await navigator.clipboard.writeText(text1);
+                console.log('Content copied to clipboard');
+                alert("Đã sao chép vào bộ đệm");
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+        const copyContent2 = async () => {
+            try {
+                await navigator.clipboard.writeText(text2);
+                console.log('Content copied to clipboard');
+                alert("Đã sao chép vào bộ đệm");
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+    </script>
+</body>
+
+
+</html>
